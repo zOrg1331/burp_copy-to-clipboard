@@ -28,7 +28,7 @@ task fatJar(type: Jar) {
     manifest {
         attributes("Implementation-Version": project.version, "Implementation-Title": project.name, "Implementation-URL": burpExtensionHomepage)
     }
-    archiveBaseName = burpExtensionJarName
+    archivesBaseName = burpExtensionJarName
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
